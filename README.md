@@ -2,7 +2,7 @@
 
 A small, local graph explorer that connects a visual diagram with keyboard navigation, matching text, and a shortest-route explanation.
 
-KeyTrail is an initial prototype prepared for the Open track of Global Innovation Build Challenge V2. It is not yet a submitted entry. The project has not been evaluated by end users, and no accessibility certification or measured learning benefit is claimed.
+KeyTrail is a prototype submitted to Track 03 (Open) of Global Innovation Build Challenge V2 on 2026-09-29. The project has not been evaluated by end users, and no accessibility certification or measured learning benefit is claimed.
 
 ## Run
 
@@ -87,8 +87,10 @@ Codex was used to propose the concept, implement the initial HTML/CSS/JavaScript
 
 The participant must inspect and understand the code and confirm the final disclosure before submission. No claim is made that the initial implementation or these English notes were written without AI. Human review or user research should only be recorded after it occurs.
 
-## Scope and remaining submission work
+## Scope and submission
 
 This is a new prototype, not a reuse of the participant's other contest entries. Graph exploration and BFS are established techniques; technical novelty and usefulness remain hypotheses to evaluate. There is no claimed award, partner, customer, deployment, or measured user benefit.
 
-Initial Codex-assisted in-app-browser QA and four runtime screenshots are recorded in the local QA materials. The source is published at https://github.com/yumin-beep/keytrail-gibc-2026. Participant review, an English 2–5 minute running demo, selection of at least three submission screenshots, a complete Built With list, and the actual Devpost submission remain. Further browser and assistive-technology testing is a product-validation task, not a stated contest certification requirement. Registration is a separate step. No public video or completed contest submission is claimed. An open-source license has not yet been selected; repository visibility does not itself grant an open-source license.
+KeyTrail was submitted at https://devpost.com/software/keytrail on 2026-09-29. The submission includes this public source repository, four gallery screenshots, a Built With list, and full AI assistance disclosure. The 2 minute 30 second English-captioned walkthrough is available at https://youtu.be/bdKZ6ICIjwc as an unlisted video. It is an edited walkthrough from actual browser states, not a real-time recording. The Devpost page confirmed “Project submitted!”; judging results remain pending.
+
+Participant code review and understanding remain the participant's responsibility. This record does not assert independent human testing. Further browser and assistive-technology testing remain product-validation work. An open-source license has not yet been selected; repository visibility does not itself grant an open-source license.
