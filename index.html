@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KeyTrail: explore small relationship graphs with a keyboard, matching text, and shortest paths. A local prototype.">
+  <title>KeyTrail — follow the connection</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="core.js" defer></script>
+  <script src="sample.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#explorer">Skip to graph explorer</a>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="KeyTrail home"><span class="brand-mark" aria-hidden="true">k<span>·</span></span><span>KeyTrail<small>CONNECTED THINKING, ONE STEP AT A TIME</small></span></a>
+    <div class="file-tools"><button id="reset" class="button quiet">Reset demo</button><button id="import" class="button quiet">Import JSON <span aria-hidden="true">↗</span></button><button id="export" class="button dark" aria-haspopup="dialog" aria-controls="export-dialog">Export graph <span aria-hidden="true">↓</span></button><input id="file-input" type="file" accept=".json,application/json" hidden></div>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title"><div><p class="eyebrow"><span></span> A LOCAL GRAPH EXPLORER</p><h1 id="page-title">Follow the connection.</h1><p class="lede">A diagram you can move through. Every node, every route,<br class="desktop-break"> and the words that connect them.</p></div><div class="privacy-note"><span aria-hidden="true">◈</span><div><strong>Your graph stays here.</strong><p>No account. No API. No uploads.<br>Files are read in this browser only.</p></div></div></section>
+    <div id="message" class="message" role="status" aria-live="polite" aria-atomic="true"></div>
+    <section class="workspace" id="explorer" aria-label="Graph explorer">
+      <div class="diagram-panel">
+        <div class="panel-heading"><div><p class="eyebrow">EXPLORE THE MAP</p><h2 id="graph-title"></h2></div><span id="direction-badge" class="badge"></span></div>
+        <p id="graph-description" class="graph-description"></p>
+        <div class="view-controls"><div class="segmented" aria-label="Graph view"><button id="visual-view" type="button" aria-pressed="true">Diagram</button><button id="text-view" type="button" aria-pressed="false">Text connections</button></div><span id="graph-count" class="small-label"></span></div>
+        <div id="visual-panel"><div class="graph-stage" id="graph-stage" role="group" aria-label="Diagram nodes" aria-describedby="keyboard-help"><svg id="edges" viewBox="0 0 900 610" aria-hidden="true"><defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker id="arrow-active" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z"></path></marker></defs><g id="edge-lines"></g></svg><div class="map-center" aria-hidden="true"><span>FOLLOW YOUR</span><strong>curiosity.</strong><i></i></div><div id="nodes"></div><div class="map-tag"><span></span><span id="data-label">SYNTHETIC DEMO DATA</span></div></div><p class="keyboard-help" id="keyboard-help"><kbd>Tab</kbd> enter the map · <kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> browse nodes · <kbd>Home</kbd><kbd>End</kbd> jump · <kbd>Enter</kbd> select</p></div>
+        <div id="text-panel" class="text-panel" hidden><p>Every connection shown in the diagram is listed below. Select a node to inspect it.</p><div id="text-connections"></div></div>
+      </div>
+      <aside class="detail-panel" aria-label="Selected node and trail">
+        <div class="detail-top"><p class="eyebrow">YOU ARE HERE</p><span id="node-counter" class="small-label"></span></div>
+        <div class="current-icon" aria-hidden="true">◎</div><h2 id="current-label"></h2><p id="current-description" class="current-description"></p>
+        <button id="use-start" class="button set-start">Use as route start <span aria-hidden="true">↘</span></button>
+        <div class="connection-heading"><h3 id="outgoing-title">Follow a connection</h3><span id="connection-count"></span></div><div id="connections" class="connection-list"></div>
+        <details id="incoming-details"><summary>Connections arriving here <span id="incoming-count"></span></summary><div id="incoming" class="incoming-list"></div></details>
+        <div class="trail-heading"><h3>Your trail</h3><button id="back" class="text-button">← Back</button></div><p class="trail-hint">Recent selections; jumps may not be connected.</p><ol id="trail" class="trail"></ol>
+      </aside>
+    </section>
+    <section class="route-panel" aria-labelledby="route-heading"><div class="route-intro"><p class="eyebrow">FIND A WAY THROUGH</p><h2 id="route-heading">The shortest route.</h2><p>Fewest connections, following the direction of each link.</p></div><form id="route-form" class="route-form"><div><label for="route-from">From</label><select id="route-from"></select></div><span class="route-arrow" aria-hidden="true">→</span><div><label for="route-to">To</label><select id="route-to"></select></div><button class="button dark" type="submit">Find route <span aria-hidden="true">↗</span></button></form><div id="route-result" class="route-result" aria-live="polite" aria-atomic="true"><p>Pick two nodes to reveal a route.</p></div><button id="clear-route" class="text-button" hidden>Clear highlighted route</button></section>
+    <section class="notes" aria-label="About this prototype"><div><span class="note-number">01</span><h3>Explore at your pace</h3><p>Use the diagram or the matching text view. Follow a connection to keep moving with context.</p></div><div><span class="note-number">02</span><h3>Make the limits visible</h3><p>A missing route stays missing. KeyTrail never invents a connection between separate nodes.</p></div><div><span class="note-number">03</span><h3>Bring a small graph</h3><p>Import up to 60 nodes and 240 links. Larger diagrams work best in text view. Export JSON to keep your work.</p></div></section>
+  </main>
+  <footer><span>KeyTrail <span class="footer-dot">·</span> Prototype / 2026</span><span>Locally processed. Independently inspectable.</span><a href="README.md">Read the project notes ↗</a></footer>
+  <dialog id="export-dialog" class="export-dialog" aria-labelledby="export-title" aria-describedby="export-help">
+    <div class="export-heading"><div><p class="eyebrow">KEEP YOUR GRAPH</p><h2 id="export-title" tabindex="-1">Export graph</h2></div><button id="export-close" class="button quiet" type="button">Close <span aria-hidden="true">×</span></button></div>
+    <p id="export-help">Review your graph below. Download the JSON file, or select and copy the text into a file named <strong>keytrail-graph.json</strong>. Nothing is uploaded.</p>
+    <label for="export-json">Graph JSON <span id="export-summary"></span></label>
+    <textarea id="export-json" readonly spellcheck="false" wrap="off" aria-describedby="export-copy-help"></textarea>
+    <p id="export-copy-help" class="export-copy-help">If the download is unavailable, choose Select JSON, then press Ctrl+C or Command+C to copy. Save the text as a UTF-8 .json file.</p>
+    <div class="export-actions"><button id="export-download" class="button dark" type="button">Download JSON <span aria-hidden="true">↓</span></button><button id="export-select" class="button quiet" type="button">Select JSON</button></div>
+    <p id="export-status" class="export-status" role="status" aria-live="polite" aria-atomic="true"></p>
+  </dialog>
+  <div id="selection-announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

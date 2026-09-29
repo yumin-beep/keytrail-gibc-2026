@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "title": "Markup is text, not HTML",
+  "directed": true,
+  "nodes": [
+    {
+      "id": "a",
+      "label": "<img src=x onerror=alert(1)>",
+      "description": "Expected: the exact characters are visible and no script runs."
+    },
+    {
+      "id": "b",
+      "label": "Safe destination"
+    }
+  ],
+  "edges": [
+    {
+      "source": "a",
+      "target": "b",
+      "label": "<script>alert(1)</script>"
+    }
+  ]
+}

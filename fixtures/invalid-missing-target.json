@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "title": "Expected import failure",
+  "directed": true,
+  "nodes": [
+    {
+      "id": "a",
+      "label": "Keep current graph"
+    }
+  ],
+  "edges": [
+    {
+      "source": "a",
+      "target": "missing"
+    }
+  ]
+}

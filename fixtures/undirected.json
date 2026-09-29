@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "title": "Undirected three-node check",
+  "directed": false,
+  "nodes": [
+    {
+      "id": "a",
+      "label": "One"
+    },
+    {
+      "id": "b",
+      "label": "Two"
+    },
+    {
+      "id": "c",
+      "label": "Three"
+    }
+  ],
+  "edges": [
+    {
+      "source": "a",
+      "target": "b",
+      "label": "connects"
+    },
+    {
+      "source": "b",
+      "target": "c",
+      "label": "connects"
+    }
+  ]
+}
