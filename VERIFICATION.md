@@ -38,10 +38,12 @@ Other pending scenarios include long labels, narrow viewport, and complete file-
 - Conformance to an accessibility standard.
 - Usefulness, learning improvement, time savings, accuracy on real datasets, or originality relative to all existing tools.
 - Complete cross-browser, mobile, or hostile-input security coverage.
-- Public demonstration video, judged result, customer, partner, or submission acceptance.
+- Judged result, customer, partner, or measured end-user benefit.
 
-## Source publication
+## Source, video and contest submission
 
-The 13 project files were prepared for publication at https://github.com/yumin-beep/keytrail-gibc-2026 on 2026-09-29. Repository publication is separate from video publication and final contest submission. No open-source license has been added.
+The 13 project files were published at https://github.com/yumin-beep/keytrail-gibc-2026 on 2026-09-29. The English-captioned video at https://youtu.be/bdKZ6ICIjwc was published as unlisted and has a verified duration of 150 seconds. It edits 14 actual browser-state captures and explicitly states that it is not a real-time recording.
+
+The Devpost page at https://devpost.com/software/keytrail displayed “Project submitted!” and “SUBMITTED TO Global Innovation Build Challenge V2” on 2026-09-29. The Track 03 submission includes four gallery screenshots and discloses the full AI-assisted implementation. Submission confirmation is not a judging result or an accessibility certification. No open-source license has been added.
 
 Implementation and verification were performed with Codex assistance. No experiment result is inferred from the presence of a feature in the code.
